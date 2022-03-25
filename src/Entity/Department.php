@@ -17,7 +17,7 @@ class Department
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 25)]
     private $name;
 
     #[ORM\OneToMany(mappedBy: 'department', targetEntity: Student::class)]
