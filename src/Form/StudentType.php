@@ -13,7 +13,9 @@ class StudentType extends AbstractType
     {
         $builder
             ->add('firstName')
+            ->add('lastName')
             ->add('numEtud')
+            ->add('department')
         ;
     }
 

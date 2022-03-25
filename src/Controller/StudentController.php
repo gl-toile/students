@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Student;
-use App\Form\Student3Type;
+use App\Form\StudentType;
 use App\Repository\StudentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,7 +25,7 @@ class StudentController extends AbstractController
     public function new(Request $request, StudentRepository $studentRepository): Response
     {
         $student = new Student();
-        $form = $this->createForm(Student3Type::class, $student);
+        $form = $this->createForm(StudentType::class, $student);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -50,7 +50,7 @@ class StudentController extends AbstractController
     #[Route('/{id}/edit', name: 'app_student_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Student $student, StudentRepository $studentRepository): Response
     {
-        $form = $this->createForm(Student3Type::class, $student);
+        $form = $this->createForm(StudentType::class, $student);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
